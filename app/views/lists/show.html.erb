@@ -1,0 +1,11 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @list.name %>
+</p>
+
+<% @products.each do |p| %>
+  <p><%= link_to p.name %></p>
+<% end %>
+<%= link_to 'Back', lists_path %>

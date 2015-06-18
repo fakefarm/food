@@ -6,6 +6,13 @@
 </p>
 
 <% @products.each do |p| %>
-  <p><%= link_to p.name %></p>
+  <%= form_for @item do |f| %>
+    <%= f.hidden_field :product_id, value: p.id %>
+    <%= f.hidden_field :list_id, value: params[:id] %>
+    <%= f.submit p.name %>
+  <% end %>
 <% end %>
+
 <%= link_to 'Back', lists_path %>
+
+
